@@ -141,6 +141,5 @@
             </div>
             @include('messenger::home')
         </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </body>
 </html>
