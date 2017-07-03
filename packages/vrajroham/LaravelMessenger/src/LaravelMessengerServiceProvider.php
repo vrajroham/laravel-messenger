@@ -14,7 +14,7 @@ class LaravelMessengerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        include __DIR__ . '/../Routes/routes.php';
+        include __DIR__ . '/../routes/routes.php';
         $this->registerViews();
     }
 
@@ -33,7 +33,7 @@ class LaravelMessengerServiceProvider extends ServiceProvider
 
     public function registerViews()
     {
-        $this->loadViewsFrom(__DIR__ . '/../Resources/views','messenger');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views','messenger');
         View::composer('messenger::home', function ($view) {
             $view->with([
                 'user' => 'vrajroham :)'
