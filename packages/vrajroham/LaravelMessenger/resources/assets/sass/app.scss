@@ -38,6 +38,7 @@
     right: 0;
     left: 0;    
     height: 8vh;
+    min-height: 8vh;
     color: #fff;
     font-size: 15px;
     font-weight: bold;    
@@ -50,8 +51,16 @@
   
   .body {
     color: #000;
-    height: 80vh;
+    height: 60vh;
     overflow-y: auto;
+    
+    .keep-bottom{
+      bottom: 0px;
+      position: absolute;
+      .chat-text {
+        border: none;
+      }
+    }
   }
 }
 

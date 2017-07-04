@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
+        <link href="{{ asset('css/laravel-messenger/laravel-messenger.css') }}" rel="stylesheet">
         <!-- Styles -->
         <style>
             html, body {
@@ -63,54 +63,6 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-            .messenger {
-              position: fixed;
-              right: 30px;
-              bottom: 30px;
-              z-index: 99999;
-            }
-            .chatbox {
-              /*background: white;
-              padding: 20px;
-              bottom: 0;
-              border: 1px solid #cecece;
-              border-radius: 5px;
-              box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-              width: 25vw;
-              height: 80vh;*/
-              z-index: 2147483000 !important;
-                position: fixed !important;
-                bottom: 65px !important;
-                right: 30px !important;
-                /*height: calc(100% - 20px - 20px) !important;*/
-                /*width: 370px !important;*/
-                height: 80vh;
-                width: 25vw;
-                min-height: 250px !important;
-                max-height: 590px !important;
-                box-shadow: 0 5px 40px rgba(0,0,0,.16) !important;
-                border-radius: 8px !important;
-                overflow: hidden !important;
-                opacity: 1 !important;
-            }
-            .chatbox .header {
-                z-index: 2147483001;
-                position: absolute;
-                top: 0;
-                right: 0;
-                left: 0;
-                height: 75px;
-                background-color: #0a6ac9;
-                box-shadow: 0 2px 4px rgba(0,0,0,.2);
-            }
-            .hidden {
-              display: none;
-            }
-
-            #intercom-container .intercom-messenger-frame {
-
-            }
-
         </style>
     </head>
     <body>
@@ -141,5 +93,6 @@
             </div>
             @include('messenger::home')
         </div>
+        <script src="{{ asset('js/laravel-messenger/laravel-messenger.js') }}"></script>
     </body>
 </html>
