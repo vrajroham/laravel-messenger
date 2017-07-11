@@ -4,7 +4,7 @@
             <a href="#" style="color:#0a6ac9"><i id="messenger-btn" class="fa fa-envelope fa-2x"></i></a>
         </div>
         <div class="chatbox hidden" id="messenger-chatbox">            
-            <component :is="currentView"  @onSelect="changeView" transition="fade" transition-mode="out-in"></component>
+            <component :is="currentView" :user="user"  @onSelect="changeView" transition="fade" transition-mode="out-in"></component>
         </div>
     </div>    
 </template>
@@ -19,7 +19,8 @@
         },
         data() {
             return {
-                currentView: 'allchats'
+                currentView: 'allchats',
+                user: null
             }
         },
         mounted() {
@@ -32,7 +33,8 @@
             });
         },
         methods:{
-            changeView(view){
+            changeView(view,user){
+                this.user = user;
                 this.currentView = view;
             }
         }

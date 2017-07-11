@@ -4,6 +4,7 @@ namespace vrajroham\LaravelMessenger\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use App\User;
 class MessengerController extends Controller
 {
     /**
@@ -17,5 +18,9 @@ class MessengerController extends Controller
     public function home(Request $request)
     {
         return view('messenger::home')->with(['user' => 'vrajroham']);
+    }
+
+    public function all_users(Request $request){
+        return response()->json(['users' => User::all()]);
     }
 }

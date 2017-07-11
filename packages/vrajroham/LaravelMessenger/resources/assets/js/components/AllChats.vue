@@ -7,26 +7,32 @@
             <div class="lm-container">
                 <div class="row">
                     <ul class="list-group">
-                        <a class="list-group-item" href="#" @click="gotChat">Vaibhavraj Sambhaji Roham <span class="badge"><i class="fa fa-angle-right"></i></span> &nbsp; <span class="badge badge-danger">2</span></a>
-                        <a class="list-group-item">Vaibhavraj Sambhaji Roham <span class="badge"><i class="fa fa-angle-right"></i></span> &nbsp; <span class="badge badge-danger">2</span></a>
-                        <a class="list-group-item">Vaibhavraj Sambhaji Roham <span class="badge"><i class="fa fa-angle-right"></i></span> &nbsp; <span class="badge badge-danger">2</span></a>
-                        <a class="list-group-item">Vaibhavraj Sambhaji Roham <span class="badge"><i class="fa fa-angle-right"></i></span> &nbsp; <span class="badge badge-danger">2</span></a>
+                        <a class="list-group-item" @click="gotChat(user)" v-for="user in users">{{ user.name }} <span class="badge"><i class="fa fa-angle-right"></i></span> &nbsp; <!-- <span class="badge badge-danger">2</span> --></a>
                     </ul>
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
 </template>
 
 <script>
     export default {
         props:['current'],
+        data(){
+            return{
+                users:[]
+            }
+        },
         mounted() {
             console.log('Component mounted.')
+            axios.get('messenger/all-users').then((response)=>{
+                    this.users = response.data.users;
+                },(error)=>{
+            });
         },
         methods:{
-            gotChat(){
-                this.$emit('onSelect','singlechat');
+            gotChat(user){
+                this.$emit('onSelect','singlechat',user);
             }
         }
     }

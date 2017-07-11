@@ -1,15 +1,26 @@
 <template>
     <div>
         <div class="header">                
-            <a href="#" class="btn" @click="goHome"> <i class="fa fa-angle-left" aria-hidden="true"></i></a>  &nbsp;Mychat
+            <a href="#" class="btn" @click="goHome"> <i class="fa fa-white fa-angle-left" aria-hidden="true"></i></a>  &nbsp; {{ user.name }}
         </div>
         <div class="body">
             <div class="lm-container">
-                
+                <div style="min-height:50px;margin-bottom:20px;">
+                    <div style="background-color:#0a6ac9;color:#fff;font-weight:normal;border-radius: 3px !important;max-width:75%;">
+                        <div style="padding:10px">Hi</div>
+                    </div>
+                    <div style="float:right;">  12-2-2017</div>
+                </div>
+                <div style="min-height:50px;">
+                    <div style="background-color:#f4f7f9;color:#000;font-weight:normal;border-radius: 3px !important;max-width:75%;">
+                        <div style="padding:10px">Hi</div>
+                    </div>
+                    <div style="float:left;">  12-2-2017</div>
+                </div>
             </div>
         </div>
         <div class="keep-bottom">
-            <textarea name="" class="chat-text " id="" cols="30" rows="1"></textarea>            
+            <textarea v-model="message" ref="messageBox" class="chat-text" id="" cols="30" rows="1" v-on:keyup.enter="send"></textarea>            
             <button class="send"><i class="fa fa-arrow-right fa-2x"></i></button>
         </div>
     </div>    
@@ -17,12 +28,23 @@
 
 <script>
     export default {
+        props:['user'],
+        data(){
+            return{
+                message : null
+            }
+        },
         mounted() {
-            console.log('Component mounted.')            
+            
         },
         methods:{
             goHome(){
                 this.$emit('onSelect','allchats');
+            },
+            send(e){
+                console.log(this.message);
+                this.message = '';
+                this.$refs.messageBox.focus();
             }
         }
     }
