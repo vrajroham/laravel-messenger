@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="messenger">
+        <div class="messenger">s
             <a href="#" style="color:#0a6ac9"><i id="messenger-btn" class="fa fa-envelope fa-2x"></i></a>
         </div>
         <div class="chatbox hidden" id="messenger-chatbox">            

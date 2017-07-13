@@ -5,17 +5,35 @@
         </div>
         <div class="body">
             <div class="lm-container">
-                <div style="min-height:50px;margin-bottom:20px;">
-                    <div style="background-color:#0a6ac9;color:#fff;font-weight:normal;border-radius: 3px !important;max-width:75%;">
-                        <div style="padding:10px">Hi</div>
+                <div style="min-height:50px;margin-bottom:25px;">
+                    <div style="background-color:#0a6ac9;color:#fff;font-weight:normal;border-radius: 3px !important;max-width:75%;min-width:75%;margin-left:25%;">
+                        <div style="padding:10px">Hi Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
                     </div>
                     <div style="float:right;">  12-2-2017</div>
                 </div>
-                <div style="min-height:50px;">
+                <div style="min-height:50px;margin-bottom:25px;">
                     <div style="background-color:#f4f7f9;color:#000;font-weight:normal;border-radius: 3px !important;max-width:75%;">
                         <div style="padding:10px">Hi</div>
                     </div>
                     <div style="float:left;">  12-2-2017</div>
+                </div>
+                <div style="min-height:50px;margin-bottom:25px;">
+                    <div style="background-color:#0a6ac9;color:#fff;font-weight:normal;border-radius: 3px !important;max-width:75%;min-width:75%;margin-left:25%;">
+                        <div style="padding:10px">Hi Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                    </div>
+                    <div style="float:right;">  12-2-2017</div>
+                </div>
+                <div style="min-height:50px;margin-bottom:25px;">
+                    <div style="background-color:#f4f7f9;color:#000;font-weight:normal;border-radius: 3px !important;max-width:75%;">
+                        <div style="padding:10px">Hi</div>
+                    </div>
+                    <div style="float:left;">  12-2-2017</div>
+                </div>
+                <div style="min-height:50px;margin-bottom:25px;">
+                    <div style="background-color:#0a6ac9;color:#fff;font-weight:normal;border-radius: 3px !important;max-width:75%;min-width:75%;margin-left:25%;">
+                        <div style="padding:10px">Hi Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                    </div>
+                    <div style="float:right;">  12-2-2017</div>
                 </div>
             </div>
         </div>
@@ -35,7 +53,7 @@
             }
         },
         mounted() {
-            
+            $(".lm-container").scrollTop(1000000);
         },
         methods:{
             goHome(){
