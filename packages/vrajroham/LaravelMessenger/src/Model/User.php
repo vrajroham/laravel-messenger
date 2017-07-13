@@ -1,20 +1,16 @@
 <?php
 
-namespace vrajroham\LaravelMessenger\model;
+namespace vrajroham\LaravelMessenger\Model;
 
-use Illuminate\Database\Eloquent\Model;
-use vrajroham\LaravelMessenger\Model\Messages;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use vrajroham\LaravelMessenger\Model\Message;
 
-class User extends Model
+class User extends Authenticatable
 {
     protected $table="users";
 
-    protected $hidden = [
-        'password', 'remember_token','created_at','updated_at'
-    ];
-
-    public function messages()
+    public function message()
     {
-    	return $this->hasMany(Messages::class);
+    	return $this->hasMany(Message::class);
     }
 }

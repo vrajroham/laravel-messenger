@@ -28,7 +28,8 @@
             axios.get('messenger/all-users').then((response)=>{
                     this.users = response.data.users;
                 },(error)=>{
-            });
+                    console.log(error.statusText);
+            });            
         },
         methods:{
             gotChat(user){

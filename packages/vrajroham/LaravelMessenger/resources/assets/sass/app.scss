@@ -50,6 +50,7 @@
   }
   
   .body {
+    background-color: #fff;
     color: #000;
     height: 60vh;
     overflow-y: auto;
@@ -68,7 +69,7 @@
   display: none;
 }
 
-.lm-container{
+.lm-container{      
       max-width: 25vw;
       margin: 20px;
       margin-top: 10px;

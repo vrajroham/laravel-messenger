@@ -5,6 +5,7 @@ namespace vrajroham\LaravelMessenger;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
+
 class LaravelMessengerServiceProvider extends ServiceProvider
 {
     /**

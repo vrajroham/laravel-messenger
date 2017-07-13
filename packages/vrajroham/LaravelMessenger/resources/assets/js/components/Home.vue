@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="messenger">s
+        <div class="messenger">
             <a href="#" style="color:#0a6ac9"><i id="messenger-btn" class="fa fa-envelope fa-2x"></i></a>
         </div>
         <div class="chatbox hidden" id="messenger-chatbox">            
@@ -37,6 +37,14 @@
                 this.user = user;
                 this.currentView = view;
             }
+        },
+        created(){
+            let id = 1;
+            Echo.join('chatroom')
+                .joining()
+                .listen('messagePosted',(e) => {
+                    console.log(e);
+                });
         }
     }
 </script>

@@ -1,0 +1,5 @@
+=starting
+-- include font-awsome cdn
+-- include laravel-messanger.css
+-- include laravel-messanger.js
+-- include @include('messenger::home')

@@ -60,9 +60,13 @@
                 this.$emit('onSelect','allchats');
             },
             send(e){
-                console.log(this.message);
-                this.message = '';
-                this.$refs.messageBox.focus();
+                let message = {'message':'Hello','user_to':2};
+                axios.post('messenger/send-message',message).then((response)=>{                        
+                        this.message = '';
+                        this.$refs.messageBox.focus();
+                    },(error)=>{
+                        console.log(error);
+                });
             }
         }
     }
