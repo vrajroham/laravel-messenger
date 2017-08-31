@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="{{ asset('css/laravel-messenger/laravel-messenger.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -71,10 +73,11 @@
             </div>
         </nav>
 
-        @yield('content')
-    </div>
-
+        @yield('content')                
+    </div>    
+    @include('messenger::home')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/laravel-messenger/laravel-messenger.js') }}"></script>
 </body>
 </html>
